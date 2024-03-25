@@ -82,10 +82,19 @@ cars.insert(3, "Mitsubishi")
 #     print("prime number")
 
 
-adj = ["red", "big", "tasty"]
-fruits = ["apple", "banana", "cherry"]
+# adj = ["red", "big", "tasty"]
+# fruits = ["apple", "banana", "cherry"]
+#
+#
+# for x in adj:
+#   for y in fruits:
+#     print(x, y)
 
 
-for x in adj:
-  for y in fruits:
-    print(x, y)
+for i in range(6):
+  for j in range(0, 7-i):
+    if j >= i:
+      print(" ", end=" ")
+    else:
+      print("*", end = " ")
+  print()
