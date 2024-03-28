@@ -152,6 +152,68 @@ thislist = [100, 50, 65, 82, 23]
 #         list3.append(el1 + ' ' + el2)
 # print(list3)
 
-mytuple = ("Hello ", "take", "Sir")
-list1 = ["Hello ", "take "]
-print(mytuple[1])
+student_grades = ("Alice", 85, 43, 56, 78, 98)
+student, *grades = student_grades
+print(sum(grades)/len(grades))
+# print(mytuple[1])
+
+thisset = {"apple", "banana", "cherry", "kiwi"}
+print(thisset)
+thislist = list(thisset)
+print(thislist)
+thisset = set(thislist)
+print(thisset)
+
+my_list = [12,5,6,7,12,5,34,23,6,12]
+my_set = set(my_list)
+print(my_set)
+
+
+thisset = {"apple", "banana", "cherry"}
+tropical = {"pineapple", "mango", "papaya"}
+thisset.update(tropical)
+mylist = ["kiwi", "orange", "apple"]
+thisset.update(mylist)
+print(thisset)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+# x = thisdict["ada"]
+# print(x)
+
+product_inventory = {
+    "apple": 0.99,
+    "banana": 0.49,
+    "orange": 0.79,
+    "grape": 1.29,
+    "watermelon": 2.99,
+    "pineapple": 1.99
+}
+
+
+for item in product_inventory.items():
+    k,v = item
+    print(k,v)
+
+    # Input string
+    text = "This is a simple example program. This program counts the frequency of each word."
+
+    # Split the string into words
+    words = text.split()
+
+    # Initialize an empty dictionary to store word frequencies
+    word_freq = {}
+
+    # Count the frequency of each word
+    for word in words:
+        word_freq[word] = word_freq.get(word, 0) + 1
+
+    # Print the word frequencies
+    print("Word frequencies:")
+    for word, freq in word_freq.items():
+        print(f"{word}: {freq}")
+product_inventory["apple"]= 3.00
+print(product_inventory["apple"])
