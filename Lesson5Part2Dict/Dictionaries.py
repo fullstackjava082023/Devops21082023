@@ -103,15 +103,9 @@ product_inventory = {
     "watermelon": 2.99,
     "pineapple": 1.99
 }
-fruit = input("enter the name of the fruit")
-if fruit in product_inventory:
-    print("the fruit is in the shop")
-else:
-    print("fruit not in the shop")
-print(product_inventory.get(fruit, "unknown"))
 
-# Ask user to input the name of the fruit in the shop:
-# Check if a specific product exists :
-# Print “yes the product exists” - if exists
-# Print “no the product not exists” - if not exists
-# print the price of the fruit or unknown if fruit not exists. (use default)
+def calc_square(number):
+   print(number * number)
+print(calc_square(10))
+
+cars = [["Volvo"],["Renault", "Peugeot", "Citroen"], ["Mercedes", "BMW", "Audi", "Wolkswagen"]]
