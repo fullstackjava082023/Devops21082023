@@ -60,3 +60,7 @@ greet_user("Arja")
 greet_user("John")
 greet_user("Ned")
 # print(counter)
+
+def calc_square(number):
+   print(number * number)
+print(calc_square(10))
