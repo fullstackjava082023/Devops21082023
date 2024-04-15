@@ -52,5 +52,9 @@ x = {
   ]
 }
 
+class Table():
+    def who_am_i(self):
+        print("I am table")
+
 print(json.dumps(x, indent=4))
 

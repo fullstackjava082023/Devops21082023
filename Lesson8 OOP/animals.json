@@ -1,0 +1,30 @@
+[{
+    "name" : "cat",
+    "age": 2,
+    "color" : "grey",
+    "keepers" : [
+      {
+        "name": "Arja",
+        "surname": "Stark",
+        "id" : 123
+      },
+      {
+        "name": "John",
+        "surname": "Snow",
+        "id" : 345
+      }
+    ]
+  },
+  {
+    "name" : "Doggy",
+    "age" : 3,
+    "color" : "yellow",
+    "keepers" : [
+      {
+        "name": "Ned",
+        "surname": "Stark",
+        "id" : 789
+      }
+    ]
+  }
+]
