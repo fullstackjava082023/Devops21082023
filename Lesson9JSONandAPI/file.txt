@@ -1,0 +1,11 @@
+Create a function chuck_jokes(number):
+
+The function get number and prints that number of the random Chuck jokes
+Stages:
+Use requests library
+Loop for range of number and get the joke
+Use requests.get(“url”)
+Extract Json response.json()
+Extract joke  :joke = json_response["value"]
+Print the joke.
+Run the function from main with argument = 5 

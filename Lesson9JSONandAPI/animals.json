@@ -1,0 +1,37 @@
+
+[
+  {
+    "age": 3,
+    "color" : "green",
+    "name" : "kitty",
+    "keepers" : [
+      {
+        "name": "Arja",
+        "familyName" : "Stark",
+        "id" : 3232233
+      },
+      {
+        "name": "John",
+        "familyName" : "Snow",
+        "id" : 4545454
+      }
+    ]
+  },
+  {
+    "age" : 2,
+    "color" : "yellow",
+    "name": "doggy",
+    "keepers" : [
+      {
+        "name": "Ned",
+        "familyName" : "Stark",
+        "id" : 453453
+      },
+      {
+        "name": "Cercei",
+        "familyName" : "Lannister",
+        "id" : 64567
+      }
+    ]
+  }
+]
