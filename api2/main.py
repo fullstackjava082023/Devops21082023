@@ -77,8 +77,8 @@ def randomFox():
 
 def main():
     # get_todos()
-    post_character(0)
-    # randomFox()
+    # post_character(0)
+    randomFox()
     # extract_text()
 
 def extract_text():
