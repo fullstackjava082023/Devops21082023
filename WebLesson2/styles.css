@@ -1,0 +1,29 @@
+body {
+    /* background-image: url(homeworkL1/arya-stark.jpg); */
+    background-size: cover;
+}
+.bgAqua {
+    background-color: aqua;
+    color: brown;
+  
+}
+ul {
+   background-color: white;
+   
+}
+
+h1.bgAqua {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+p {
+    background-color: rgb(255, 0, 128);
+    font: 18px 'Arial';
+    border: 10px solid green;
+    border-radius: 5px;
+    margin: 25px;
+    padding: 5px 50px 0px 100px;
+    width: 50%;
+    box-shadow: 50px 10px 100px grey;
+    cursor: pointer;
+}
