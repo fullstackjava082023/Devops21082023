@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generic Welcome</title>
+</head>
+<body>
+    {% if first_name %}
+        <h1>hello world, {{first_name}} your age {{age}}</h1>
+        <button> LOG OUT NOW!</button>
+    {% else %}
+        <h1>hello world, Stranger</h1>
+        <button> LOG IN NOW!</button>
+    {% endif %}
+
+    {% if age and age > 18 %}
+        <h2>you are an adult</h2>
+    {% else %}
+        <h2>you are a minor</h2>
+    {% endif %}
+
+</body>
+</html>

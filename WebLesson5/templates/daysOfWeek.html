@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days of the Week</title>
+</head>
+<body>
+
+    <h1>Days of the Week</h1>
+    <ul>
+        {% for day in days %}
+           <li>
+                <a href ="/days/{{loop.index - 1}}">{{day}}</a>
+            </li> 
+        {% endfor %}
+    </ul>
+
+    <form action="/addDay" method="post">
+        <label for="newDay">Enter a new day:</label>
+        <input type="text" name="newDay" id="newDay" required>
+        <button type="submit">Add</button>
+        <span style="color:red; font-family: cursive">
+             {{error}}
+        </span>
+    </form>
+
+
+    <h1>Selected day is : {{days[selected_day]}}</h1>
+
+    
+
+   
+
+
+</body>
+</html>
