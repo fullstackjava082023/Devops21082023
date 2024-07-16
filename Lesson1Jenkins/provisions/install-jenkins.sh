@@ -1,5 +1,6 @@
 # install java v17
 sudo apt update
+sudo apt-get upgrade -y
 sudo apt install fontconfig openjdk-17-jre git -y
 
 
