@@ -1,3 +1,6 @@
+#set timezone to be jerusalem:
+sudo timedatectl set-timezone Asia/Jerusalem
+
 # install java v17
 sudo apt update
 sudo apt-get upgrade -y

@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    parameters {
+         choice (choices: ['DEVELOPMENT', 'STAGING', 'PRODUCTION'], 
+         description: 'Choose the environment for this deployment.', 
+         name: 'ENVIRONMENT')
+         
+         password (defaultValue: '123ABC', 
+         description: 'Enter the API_KEY', 
+         name: 'API_KEY')
+         
+         text (name:'CHANGE_LOG',
+                description: 'Enter something to the log',
+                defaultValue: '' 
+             )
+    }
+    stages {
+        stage('Test') {
+            steps {
+                echo "This step tests the project"
+            }
+        }
+        stage('Deploy') {
+            when {
+                environment name: 'API_KEY', value: '1111111'
+            }
+            steps {
+                sh 'echo "This stage deploys the project to ${ENVIRONMENT}"'
+            }
+        }
+        stage('Report') {
+            steps {
+                echo "This stage generates a report"
+                sh "printf \"This is the change log.\" > report.txt"
+                sh "echo ${CHANGE_LOG} >> report.txt"
+                archiveArtifacts allowEmptyArchive: true,
+                    artifacts: '*.txt',
+                    fingerprint: true,
+                    followSymlinks: false,
+                    onlyIfSuccessful: true
+            }
+        }
+    }
+}

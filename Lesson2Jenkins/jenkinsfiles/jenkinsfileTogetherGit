@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    environment {
+        PERSON = "Arja"
+    }
+    stages {
+        stage('Hello to the person') {
+            steps {
+                sh "echo 'Hello World' ${PERSON}"
+                echo currentBuild.projectName
+                
+            }
+        }
+        stage('Get code from github') {
+            steps {
+                echo 'Pulling the files from github'
+                git branch: 'main', url: 'https://github.com/fullstackjava082023/hello-world-python.git' 
+            }
+        }
+        stage('Run') {
+            steps {
+               sh 'python3 main.py'
+            }
+        }
+        
+    }
+}
