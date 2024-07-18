@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="/static/styles/styles1.css">
 </head>
 <body>
-    <!-- Create a form titled "Add Contact"
-    with the following fields:Name 
-    (required)Email,Phone (required)
-    Gender"I Agree" Checkbox (required)"Add to Contacts" Button -->
+    <!--Error message which will be shown by the rendered parameter error    &lt;!&ndash; Create a form titled "Add Contact"-->
+<!--    with the following fields:Name -->
+<!--    (required)Email,Phone (required)-->
+<!--    Gender"I Agree" Checkbox (required)"Add to Contacts" Button &ndash;&gt;-->
+    <div id="error">
+        <h2>{{error}}</h2>
+    </div>
    
     <form action="/createContact" method="POST" enctype="multipart/form-data">
         <h1>Add Contact Form</h1>

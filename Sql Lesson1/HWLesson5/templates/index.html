@@ -42,7 +42,8 @@ As example of contacts you can insert Arja Stark ,
                     <td>{{contact.gender}}</td>
                     <td><img src="/static/images/{{contact.photo}}"  height="50px"></td>
                     <td>
-                        <button onclick=deleteRow(this)>Delete</button> <br/>
+                        <a href="/deleteContact/{{contact.number}}"><button>Delete</button></a>
+                        <br/>
                         <button>Edit</button>
                     </td>
                 </tr>        

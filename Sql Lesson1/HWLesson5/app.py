@@ -40,6 +40,12 @@ contacts_list = [
                 ]
 
 
+def findByNumber(number):
+    for contact in contacts_list:
+        if contact['number'] == number:
+            return contact
+    return None
+
 @app.route('/')
 def hello():
     return 'Hello, World!'
@@ -79,6 +85,13 @@ def createContact():
             }
     # add new contact to the list (database)
     contacts_list.append(new_contact)
+    return redirect('/viewContacts')
+
+@app.route('/deleteContact/<int:number>')
+def deleteContact(number):
+    contact = findByNumber(number)
+    if contact:
+        contacts_list.remove(contact)
     return redirect('/viewContacts')
 
 

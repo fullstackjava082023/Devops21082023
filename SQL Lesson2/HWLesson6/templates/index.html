@@ -20,7 +20,19 @@ As example of contacts you can insert Arja Stark ,
 <body>
     <h1>Contacts Page</h1>
 
-    <table border="1">
+    <div id = "searchForm">
+        <!-- search form to filter the results by criteria -->
+        <form action="/search" method="POST">
+            <h2>Search</h2>
+            <label for="search_name">Search by name:</label>
+            <input type="text" name="search_name" placeholder="Search by name">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    
+
+    <table>
         <thead>
            <tr>
                <th>Number</th> 

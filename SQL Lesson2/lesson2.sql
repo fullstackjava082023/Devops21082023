@@ -12,13 +12,12 @@ select * from customers where country = 'spain';
 
 -- insert into the table payments new record with the following values : customerNumber = 112, checkNumber= 'BR23232' , amount = 1000
 -- select * from payments;
-insert into payments  (customerNumber, checkNumber, amount) values(112, 'BR23232' , 1000);
+insert into payments (customerNumber, checkNumber, amount) values(112, 'BR23232' , 1000);
 
 select * from payments where customerNumber = 112;
 
 -- DELETE FROM table_name WHERE condition;
 delete from payments  where customerNumber = 112;
-
 
 -- get productName and price from products table reduced by 5
 select * from products;

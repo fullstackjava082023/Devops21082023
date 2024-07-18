@@ -61,6 +61,13 @@ def addContact():
 def viewContacts():
     return render_template('index.html', contacts=contacts_list)
 
+# the methods check by email or by phone if that contact exists in the database
+def check_contact_exists(email, phone):
+    for contact in contacts_list:
+        if contact['email'] == email or contact['phone'] == phone:
+            return True
+    return False
+
 
 @app.route('/createContact', methods=['POST'])
 def createContact():
@@ -70,8 +77,13 @@ def createContact():
     phone = request.form['phone']   
     gender = request.form['gender']
     photo = request.files['photo']
+    # check if the contact already exists
+    if check_contact_exists(email, phone):
+        # render addContactForm.html with an error message
+        return render_template('addContactForm.html', error='Contact already exists')
+
     # create a name for the file to be saved
-    file_path = 'HWSQLLesson2Flask/static/images/' + fullname + '.jpg'
+    file_path = 'static/images/' + fullname + '.jpg'
     # save the file in the server
     photo.save(file_path)
     # create a new contact

@@ -24,20 +24,31 @@ img {
     padding: 20px 70px;
 }
 
+#searchForm {
+    margin: 20px;
+    padding: 20px;
+    width: 90%;
+    border-radius: 8px;
+    
+    /* border: 2px solid #ccc; */
+
+}
+
 
 button {
-    margin-top: 20px;
     background-color: #007bff;
     color: #FFF;
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid #ccc;
-    padding: 6px;
-    margin-left: 40%;
 }
 
 td button {
     margin: auto;
+    margin-top: 20px;
+    
+    padding: 6px;
+    margin-left: 40%;
 }
 
 
