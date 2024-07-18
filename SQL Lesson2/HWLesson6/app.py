@@ -98,21 +98,5 @@ def deleteContact(number):
     return redirect('/viewContacts')
 
 
-def search_contacts(search_name):
-    search_results = []
-    for contact in contacts_list:
-        if search_name.lower() in contact['name'].lower():
-            search_results.append(contact)
-    return search_results
-
-# search route to filter the contact list according to the search criteria:
-@app.route('/search', methods=['POST'])
-def search():
-    search_name = request.form['search_name']
-    search_results = search_contacts(search_name)
-    return render_template('index.html', contacts=search_results)
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)

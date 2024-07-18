@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Contact</title>
-    <link rel="stylesheet" href="/static/styles/styles1.css">
+    <link rel="stylesheet" href="/HWDOM/styles1.css">
 </head>
 <body>
-    <!-- Create a form titled "Add Contact"
+    <!-- Create a form titled "Add Contact" 
     with the following fields:Name 
     (required)Email,Phone (required)
     Gender"I Agree" Checkbox (required)"Add to Contacts" Button -->
    
-    <form action="/createContact" method="POST" enctype="multipart/form-data">
+    <form action="/HWDOM/index.html">
         <h1>Add Contact Form</h1>
         <!-- name -->
         <div>
@@ -39,12 +39,6 @@
                 <option value="other">Other</option>
             </select>
         </div>
-        <!-- upload photo -->
-        <div>
-            <label for="photo">Upload Photo:</label>
-            <input type="file" name="photo" id="photo">
-        </div> 
-        <br>
         <!-- agree checkbox -->
         <div>
             <label for="agree">Agree with terms*</label>
@@ -54,8 +48,7 @@
         <input type="submit" value="Add to Contacts">    
     </form>
 
-
-    <script src="/static/js/index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
 

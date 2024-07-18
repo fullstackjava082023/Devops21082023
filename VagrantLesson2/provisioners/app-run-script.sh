@@ -1,10 +1,8 @@
-
+cd /vagrant
 
 # activate virtual environment
-python3 -m venv .venv
-source .venv/bin/activate
-
-cd /vagrant
+sudo python3 -m venv .venv
+sudo source .venv/bin/activate
 
 # Install Python dependencies from requirements.txt
 pip3 install -r requirements.txt

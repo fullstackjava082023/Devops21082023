@@ -1,22 +1,20 @@
 from flask import Flask, jsonify, request
 import mysql.connector
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
+
 
 # create a connection to the database
 db = mysql.connector.connect(
-   host=os.getenv("DB_HOST"),
-   user=os.getenv("DB_USER"),
-   password=os.getenv("DB_PASSWORD"),
-   database=os.getenv("DB_NAME")
+   host="localhost",
+   user="root",
+   password="admin",
+   database="flights_system"
 )
 
 
 # print(db)
 # creation of the cursor variable which will be used to interact with the database
-cursor = db.cursor(dictionary=True)
+cursor = db.cursor()
 # cursor.execute("CREATE DATABASE IF NOT EXISTS flights_system")
 
 
@@ -48,23 +46,6 @@ def add_country(name):
 
 # add_country('Nicaragua')
 
-def add_airline(airline_name, country_id):
-    cursor.execute("insert into airlines (name, country_id) VALUES (%s, %s)", (airline_name, country_id))
-    db.commit()
-    return "Airline added successfully"
-
-
-def update_airline(airline):
-    cursor.execute("UPDATE airlines SET Name = %s, country_id = %s WHERE id = %s",
-                   (airline['name'], airline['country_id'], airline['id']))
-    db.commit()
-    if cursor.rowcount > 0:
-        return f"Successfully updated {cursor.rowcount}"
-    else:
-        return "no rows updated"
-
-
-
 
 app = Flask(__name__)
 @app.route('/')
@@ -90,22 +71,6 @@ def add_country_api():
     name = data['name']
     result = add_country(name)
     return jsonify(result)
-
-@app.route('/api/addAirline', methods=['POST'])
-def add_airline_api():
-    data = request.json
-    airline_name = data['Name']
-    country_id = data['Country_Id']
-    result = add_airline(airline_name, country_id)
-    return jsonify(result)
-
-
-@app.route('/api/updateAirline', methods=['PUT'])
-def update_airline_api():
-    airline = request.json
-    result = update_airline(airline)
-    return jsonify(result)
-
 
 
 if __name__ == '__main__':
