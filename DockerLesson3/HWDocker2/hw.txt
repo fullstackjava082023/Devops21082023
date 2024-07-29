@@ -1,0 +1,34 @@
+Dockerizing the python program by building the images .
+
+Create a file print_time.py which will print current date 
+Step 2: Create the Dockerfile for the Initial Version
+In the same directory, create a Dockerfile with the following content:
+# Use the official Python base image
+
+# Set the working directory in the container
+
+# Copy the Python script into the container
+
+# Run the Python script
+
+Step 3: Build the Docker Image
+	Open a terminal (or VS Code terminal) and navigate to the project directory.
+Build the Docker image using the following command:
+docker build … tag it with version v1
+
+Step 4: Run the Docker Container
+	Run the container and show the logs of the container:
+	Submit screenshot of that container logs
+
+Step 5: Update the Python Program to Print Time and Day of the Week
+Update the print_time.py file to include the day of the week:.
+Step 6: Create a New Dockerfile for the Updated Version
+You can use the same Dockerfile since the changes are only in the Python script.
+Step 7: Build the Updated Docker Image
+	Build a new Docker image with a different tag:
+	docker build  … tag it with the version v2.
+
+Step 8: Run the Updated Docker Container
+	Run the container from the new image
+	Show the logs of the container
+	Submit screenshot of that container logs
