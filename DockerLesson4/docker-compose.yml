@@ -1,0 +1,16 @@
+services:
+  # container of MYSQL
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+    #ports
+    volumes:
+      - sql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 5012:80  
+volumes:
+  sql-data:

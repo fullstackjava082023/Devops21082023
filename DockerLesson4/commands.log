@@ -1,0 +1,77 @@
+ 165  docker start 37b4c8a49db8
+  166  docker ps
+  167  docker logs 37b4c8a49db8
+  168  docker ps
+  169  docker run -d -p6001:6379 --name redis_old redis:4.0
+  170  docker ps
+  171  docker logs redis_old
+  172  docker run --name redis_latest  redis:latest
+  173  docker start redis_latest
+  174  docker logs redis_latest
+  175  docker ps
+  176  docker exec -it redis_latest bash
+  177  docker run -d  shashkist/docker-hello-test:1.1
+  178  docker ps
+  179  docker logs brave_borg
+  180  docker attach brave_borg
+  181  docker ps
+  182  docker ps -a
+  183  docker logs brave_borg
+  184  exit
+  185  cd /vagrant
+  186  ls
+  187  ls -a
+  188  exit
+  189  cd /vagrant
+  190  ls
+  191  docker build -t hello-world-loop:1.0 .
+  192  docker image
+  193  docker images
+  194  docker run hello-world-loop:1.0
+  195  docker run -d  hello-world-loop:1.0
+  196  docker ps
+  197  docker exec -it 71c76db2d6ae sh
+  198  docker logs 71c76db2d6ae
+  199  docker stop 71c76db2d6ae
+  200  docker images
+  201  docker image
+  202  docker images
+  203  docker run -n ilia  -d hello-world-loop:1.0
+  204  docker run --name ilia  -d hello-world-loop:1.0
+  205  docker logs ilia
+  206  docker stop ilia
+  207  docker build -t hello-world-loop:2.0 .
+  208  docker images
+  209  ls
+  210  cat main.py
+  211  docker run -n iliav2 -d  hello-world-loop:2.0
+  212  docker run --name iliav2 -d  hello-world-loop:2.0
+  213  docker logs iliav2
+  214  docker ps
+  215  docker ps -a
+  216  docker start ilia
+  217  docker logs ilia
+  218  docker logs ilia2
+  219  docker logs iliav2
+  220  docker images
+  221  exit
+  222  cd /vagrant
+  223  ls
+  224  ./save_commands.sh
+  225  cd ..
+  226  cat /vagrant/commands.log
+  227  docker ps
+  228  docker compose ps
+  229  docker compose down
+  230  cd /vagrant
+  231  docker compose ps
+  232  docker compose down
+  233  docker ps
+  234  docker ps -a
+  235  ls
+  236  docker compose down
+  237  docker compose up -d
+  238  cd flask-app/
+  239  docker build -t shashkist/flask_contacts_course .
+  240  docker push shashkist/flask_contacts_course
+  241  docker images

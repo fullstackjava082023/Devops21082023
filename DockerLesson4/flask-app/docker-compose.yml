@@ -1,0 +1,22 @@
+services:
+  # my app - flask contacts app image
+  my-app:
+    image: shashkist/flask_contacts_course
+    ports:
+      - 5052:5052 
+    environment:
+      - DATABASE_TYPE=MONGO
+      - MONGO_URI=mongodb://mongo:27017/
+  # mongo is the official MongoDB image
+  mongo:
+    image: mongo:4.4.2
+    # ports we do not need to expose because the containers are in the same network
+    volumes:
+      - mongo-data:/data/db
+  # mongo-express is a web-based MongoDB admin interface
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+volumes:
+  mongo-data:
