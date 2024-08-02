@@ -1,0 +1,35 @@
+services:
+  my-app:
+      build: .
+      image: shashkist/flask_contacts_course
+      ports:
+        - 5052:5052 
+      environment:
+         - DATABASE_TYPE=MYSQL
+         - DB_HOST=db
+      depends_on:
+        db:
+          condition: service_healthy
+  # container of MYSQL
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+    #ports
+    volumes:
+      - sql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 5012:80  
+    depends_on:
+        db:
+          condition: service_healthy
+volumes:
+  sql-data:
