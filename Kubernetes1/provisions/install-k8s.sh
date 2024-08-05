@@ -38,4 +38,4 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
 
 # # start minikube
-# minikube start --driver=docker --user=vagrant 
+minikube start --driver=docker # --user=vagrant 

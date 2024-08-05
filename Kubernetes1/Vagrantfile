@@ -34,11 +34,12 @@ Vagrant.configure("2") do |config|
     # installing kubectl and  minikube
     desktop.vm.provision "shell", path: "provisions/install-k8s.sh"
 
-    # starting mini kube on each boot
-    # desktop.vm.provision "shell", inline: <<-SHELL, run: "always"
-    #   # Other provisioning steps...
-    #   minikube start --driver=docker --user=vagrant vagran
-    #   # give permissions to the kubeconfig files
+   
+    # # starting mini kube on each boot
+    #   # Start Minikube as the vagrant user
+    #   sudo -u vagrant sh -c "minikube start --driver=docker"
+
+    #   # Give permissions to the kubeconfig files
     #   sudo chmod -R +r /home/vagrant/.minikube/
     #   sudo chmod -R +r /home/vagrant/.kube/
     # SHELL
@@ -49,7 +50,7 @@ Vagrant.configure("2") do |config|
     # Enable drag and drop
     desktop.vm.provider "virtualbox" do |vb|
       vb.gui = true
-      vb.memory = "3048"
+      vb.memory = "4096"
       vb.cpus = 3
       vb.name = "JenkinsUbuntuLearning" 
       vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
