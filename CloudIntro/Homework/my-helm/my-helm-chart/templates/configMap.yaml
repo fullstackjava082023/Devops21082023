@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: first-chart-configmap-{{ .Chart.Version }}
+data:
+  port: "{{ .Values.service.port }}"
+  {{if eq .Values.env "staging"}}
+  allowTesting: "true"
+  {{else}}
+  allowTesting: "false"
+  {{end}}
+
+  
