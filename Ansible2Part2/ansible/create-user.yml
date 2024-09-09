@@ -1,0 +1,29 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: create Arja user
+      user:
+        name: arja
+        password: "$6$R5S1532BtgFx7T66$DjDYH2bXUSyboA6Wqg2SorbnX/olLM.WAwVpNGsYee3BlGS3Gss87R0.uEX4n2Yd9Fu5uJ/Xb6UUW5NnPklex."
+        groups: root  
+    - name: add ssh key to arja user
+      authorized_key:
+        user: arja
+        # state: present
+        key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPsP5SW6gaPi13WetZnOyi/zvOqJnfX8WFnCBsTT2Ir6 default"
+    # copy sudoers_arja file to /etc/sudoers.d/ directory
+    # - name: copy sudoers_arja file to /etc/sudoers.d/ directory
+    #   copy:
+    #     src: sudoers_arja.sh
+    #     dest: /etc/sudoers.d/arja
+    #     owner: root
+    #     group: root
+      
+    - name: Ensure the user is added to the sudoers file
+      lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: '^%arja'
+        line: 'arja ALL=(ALL) NOPASSWD: ALL'
+        
+
