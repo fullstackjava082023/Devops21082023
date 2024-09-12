@@ -1,0 +1,59 @@
+---
+# This playbook installs Apache on webservers hosts in the inventory file.
+# ########Web Servers########
+- hosts: webservers
+  # vars:
+  #   msg: "This is a message from the playbook"
+  vars_files:
+    - variables.yaml
+  become: true
+  tasks:
+  - name: Install apache2 and PHP packages 
+    tags: apache, php, install
+    package: #apt yum (ubuntu/centos)
+      name: 
+        - '{{ apache }}'
+        - '{{ php }}'
+      update_cache: yes
+      state: latest
+  - name: Start Apache Centos
+    tags: apache, start
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+    when: ansible_distribution == 'CentOS'
+  - name: Open port 80
+    tags: apache, port
+    firewalld:
+      port: 80/tcp
+      permanent: yes
+      state: enabled
+      immediate: yes
+    when: ansible_distribution == 'CentOS'
+
+  # Copy the index.html file to the web server
+  # - name: Copy index.html file
+  #   tags: apache, index, file
+  #   copy:
+  #     src: index.html
+  #     dest: /var/www/html/index.html
+  
+  # Resolve template index.html.j2
+  - name: Resolve template index.html.j2 and copy to web server
+    tags: apache, index, file
+    template:
+      src: index.html.j2
+      dest: /var/www/html/index.html
+    
+  
+
+
+# #######DB SERVERES########  
+- hosts: dbservers
+  become: true
+  tasks:
+   - name: Install mariadb packages
+     package:
+       name: mariadb-server
+       state: latest

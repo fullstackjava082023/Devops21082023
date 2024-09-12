@@ -1,0 +1,14 @@
+apache: |
+  {% if ansible_distribution == 'Ubuntu' %}
+  apache2
+  {% elif ansible_distribution == 'CentOS' %}
+  httpd
+  {% endif %}
+php: |
+  {% if ansible_distribution == 'Ubuntu' %}
+  libapache2-mod-php
+  {% elif ansible_distribution == 'CentOS' %}
+  php
+  {% endif %}
+
+msg: "This is a message from the provision site role"

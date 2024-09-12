@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My PAGE</title>
+</head>
+<body>
+    <h1>hello this is a simple web site to check the apache</h1>
+    <h2>The host name is : {{ inventory_hostname }}</h2>
+    <h2>The host ip is : {{ ansible_host }}</h2>
+
+    <p>my message : <b>{{msg | default('no message') }} </b></p>
+
+    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="google logo">
+    <button>Like!</button>
+</body>
+</html>
+
