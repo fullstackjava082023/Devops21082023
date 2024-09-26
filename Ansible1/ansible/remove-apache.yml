@@ -3,13 +3,11 @@
 - hosts: all
   become: true
   tasks:
-  
-  - name: Remove apache2 packages
-    apt:
-      name: apache2
+  - name: UnInstall apache2 and PHP packages 
+    package: #apt yum (ubuntu/centos)
+      name: 
+        - '{{ apache }}'
+        - '{{ php }}'
       state: absent
-  
-  - name: remove PHP Support for Apache2
-    apt:
-      name: libapache2-mod-php
-      state: absent
+      purge: yes
+

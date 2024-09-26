@@ -12,27 +12,6 @@
       update_cache: yes
       state: latest
    
-
-  # - name: Install apache2 and PHP packages Ubuntu
-  #   apt:
-  #     name: 
-  #       - apache2
-  #       - libapache2-mod-php
-  #     update_cache: yes
-  #     state: latest
-  #   when: ansible_distribution=='Ubuntu'
-  
-  # # centos
-  # - name: Install apache2 and php packages CentOS
-  #   yum:
-  #     name: 
-  #       - httpd
-  #       - php
-  #     update_cache: yes
-  #     state: latest
-  #   when: ansible_distribution=='CentOS'
-  
- 
 # ##############################################
   - name: Start Apache Centos
     service:

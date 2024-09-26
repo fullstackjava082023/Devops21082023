@@ -1,0 +1,1 @@
+stam content cat.txt cat.txt

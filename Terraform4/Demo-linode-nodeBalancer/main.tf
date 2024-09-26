@@ -79,5 +79,8 @@ output "web2_ip" {
 }
 
 output "nodebalancer_ip" {
-  value = linode_nodebalancer.lb.ipv4
+  value = {
+    ip = linode_nodebalancer.lb.ipv4
+    hostname = linode_nodebalancer.lb.hostname
+  }
 }
